@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>GhostBSD Handbook</title>
+</head>
+
+<html>
+<body>
+
+<h2>Introduction</h2>‭ 
+<p>Welcome to GhostBSD‭! ‬GhostBSD is a FreeBSD based operating system for Intel‭ (‬x86‭ ‬and Itanium‭®) ‬and AMD64‭ ‬computers.‭ ‬Eric Turgeon in Moncton NB Canada began the project in 2009.‭ ‬Since‭ ‬then,‭ ‬GhostBSD evolved from a live CD to a completely installable system.‭ 
+
+GhostBSD is a customized version of FreeBSD that provides a graphical installer,‭ ‬package management,‭ ‬and graphical utilities that make BSD suitable for desktop use.‭  This alleviates the common ‬user difficulties configuring FreeBSD.‭  S‬imply install and start using GhostBSD.‭  ‬GhostBSD also serves as an easy introduction for Linux users to FreeBSD by avoiding the configuration.‭</p>  
+
+<h3>A Brief History of GhostBSD‭</h3> 
+
+<p>Project founders Eric Turgeon and Francois Toussaint thought of producing a secure,‭ ‬installable FreeBSD Gnome system that would help users adapt to FreeBSD.‭ ‬Francois Toussain and Eric Turgeon faced a number of problems including the lack of knowledge of building a BSD system,‭ ‬and programming it.‭ ‬Francois moved on to other things, but the Eric moved the project along and GhostBSD evolved with great success!
+
+‭Prior to GhostBSD, ‬Finstall and Freesbie were live CD versions of BSD.‭  Both projects existed briefly and served as models for GhostBSD.   Eric adopted the Gnome gui and released an early version (with bugs) to guage community reaction (positive).  Work then began on a full-fledged system.  ‬1.0‭ ‬BETA came out 10 November‭ ‬2009, and the project was on the road to becoming a reality.  GhostBSD‭ ‬2.5‭ initiated the g‬raphical installer.‭</p> 
+
+<h3>GhostBSD Project Goals</h3>‭ 
+
+<p>The goals of the GhostBSD Project are to provide a configured GTK desktop and software on the  FreeBSD operating system.  GhostBSD uses‭:</p>
+<ul>
+   <li>A simple installer where one answers a few simple questions to get going.‭ </li>‭
+   <li>Automatic detection and configuration of video,‭ ‬sound,‭ ‬network and other hardware.‭ </li>‭
+   <li>GTK desktop environments to support your day-to-day computing needs.‭ </li>‭
+   <li>Easy software management via a package manager to install and uninstall Software.‭ </li>‭
+   <li>A large number software applications are available through FreeBSD Package and the ports collection.‭ ‬FreeBSD has over‭ ‬23,000‭ ‬applications.‭</li>‭‭ 
+   <li>GhostBSD can run almost any GNU/Linux application using Linux binary compatibility.</li>‭
+   <li>‭The Wine software packages make it possible ‬ to run many Windows applications.</li>‭
+</ul></p>
+
+Some advantages of GhostBSD: 
+<ul>
+   <li>resistance to viruses,‭ ‬spyware and other malware.‭ </li>‭
+   <li>drives do not need to be defragmented and does not slow down over time.‭ </li>‭
+   <li>works on 32-bit and‭ ‬64-bit systems, with single and multiple processors.‭</li>‭
+</ul>
+
+<h2>Installing GhostBSD</h2>
+
+<h3>Minimum System Requirements:</h3>
+
+<h4>LXDE spin</h4>
+<ul>
+   <li>Pentium II</li>
+   <li>256 MB RAM</li>
+   <li>10GB of free hard drive space</li>
+   <li>Network card</li>
+   <li>Sound card (if you want sound)</li>
+</ul>
+<h4>Gnome spin</h4>
+<ul>
+   <li>Pentium III</li>
+   <li>256 MB RAM</li>
+   <li>10GB of free hard drive space</li>
+   <li>Network card</li>
+   <li>Sound card (if you want sound)</li> 
+</ul>
+
+<h3>Recommended Base Systems</h3>
+
+<h4>LXDE spin</h4>
+<ul>
+   <li>Pentium III</li>
+   <li>512 MB RAM</li>
+   <li>20GB of free hard drive space</li>
+   <li>Network card</li>
+   <li>video card (more fun with games)</li>
+   <li>Sound card (if you want sound)</li>
+</ul>
+<h4>Gnome spin</h4>
+<ul>
+   <li>Pentium 4</li>
+   <li>1024 MB RAM</li>
+   <li>10GB of free hard drive space</li>
+   <li>Network card</li>
+   <li>video card (more fun with games)</li>
+   <li>Sound card (if you want sound)</li> 
+</ul>
+
+<h3>Supported Processors</h3>
+
+<p>GhostBSD works on 32-bit(i386) and 64-bit processors.  These are manufactured by AMD and Intel. </p> 
+
+<h3>Video Cards</h3>
+
+<p>GhostBSD uses X.org drivers for graphics support and supports many video cards. 3D acceleration works on most video cards (NVIDIA, ATI, Intel).  If 3D does not work, you may need to choose the 2D driver.  If that fails, use the VESA  driver.</p>
+
+<h3>Hardware</h3>
+
+<p>Although most hardware works with GhostBSD, there are exceptions. Please report the problem so that the developers address it. Remember, GhostBSD is really FreeBSD, so any hardware that works on FreeBSD will work on GhostBSD. If you know you are using unique hardware, before installing check the FreeBSD 9.x hardware notes.</p>
+
+<h3>Wireless Devices</h3>
+
+<p>Wireless device drivers are a special problem. GhostBSDs supports <i>some</i> wireless PCMCIA, USB, and other networking devices. A few manufacturers provide drivers for Linux/Unix. If you are about to purchase a device for use, please check the Free BSD site.</p>
+
+<h2>Pre-installation Tasks</h2>
+
+<h3>Back-up Data</h3>
+
+<p>If the hard drive has important data on it, <i>copy the data to another storage device before starting your installation</i>.</p>
+
+<h3>Check for FreeBSD Errata</h3>
+
+<p>GhostBSD is based on FreeBSD. Although the FreeBSD Project strives to ensure that each release of FreeBSD is as stable as possible, bugs occasionally creep into the process. On very rare occasions those bugs affect the installation process. As these problems are discovered and fixed, they are noted in the FreeBSD Errata on the FreeBSD web site. Check the errata before installing to make sure that there are no problems that might affect the installation.</p>
+
+<h3>Prepare the Installation Media</h3>
+
+<p>The installation system for GhostBSD can be downloaded for free. GhostBSD is available in .iso (DVD) or .img (USB stick and flash drive) file extension. Copies of GhostBSD installation media are available at the GhostBSD download page.</p>
+
+<h4> Creating a bootable Memory Stick in FreeBSD, PC-BSD or GhostBSD.</h4>
+<i>Warning</i>: The example below shows /dev/da0 as the target device where the image will be written. <i>Be very careful that the correct device is used as the output target, or you may destroy a drive other than the USB drive and lose data</i>. The memory stick image has a .img extension. The .img file is not a regular file. It is an image of the complete contents of the memory stick. It cannot simply be copied like a regular file, but must be written directly to the target device with <code> dd(1): dd if=/path/to/GhostBSD-2.5-i386.img of=/dev/da0 bs=1mM</code>
+
+<!--These are inconsistent /dev/da0 and /dev/sdf as targets for the image.  Shouldn't the paragraph above use /dev/sdf instead of da0?-->
+
+<h4>Creating a bootable Memory Stick in GNU/Linux.</h4> 
+<p>Warning: The example below shows /dev/sdf as the target device where the image will be written. Be very careful that the correct device is used as the output target, or you may destroy existing data. The memory stick image has a .img extension. The .img file is not a regular file. It is an image of the complete contents of the memory stick. It cannot simply be copied like a regular file, but must be written directly to the target device with <code>dd(1): sudo dd if=GhostBSD-2.5-i386.img of=/dev/sdf bs=1M</code></p>
+
+<h4> Creating a bootable Memory Stick in Windows</h4>
+<p> Warning: Be sure to give the correct drive letter as the output target, or you may overwrite and destroy existing data. Windows Image Writer for Windows is a free application that can  write an image files to a memory sticks. Download it and extract it. 
+<!--should have a link to the application-->
+Double-click the Disk Imager icon to start the program. Verify that the drive letter shown under Device is the drive with the memory stick. Click the folder icon and select the image to be written to the memory stick. Click Save to accept the image file name. Verify that everything is correct, and that no folders on the memory stick are open in other windows. When everything is ready, click Write to write the image file to the memory stick. </p>
+
+<h4>Starting GhostBSD Live Media</h4> 
+<p>The computer BIOS contains boot sequence instructions.  If you are going to boot from the DVD or a USB device, then you must cue them before the computer's hard drive boot. Typically the BIOS boot sequence instructions can be accessed by pressing F10, F11, F12, or Escape and select SETUP.  Usually the computer provides instructions during the start up sequence.  Browse through the menu options to find Boot Sequence and que appropriately.  Some computers allow selection of boot devices without accessing the BIOS setup.  Again, this is usually presented on the computer screen extremely briefly during the startup sequence.  
+<!--examples: on my old IBM G40 laptop, I press the IBM bar; on my HP laptop, I press the esc key-->
+</p>
+<p>When using a bootable USB stick,  plug in your USB stick before turning on the computer. If you are booting from DVD drive, then you will need to turn on the computer, and insert the DVD at the first opportunity. If you are too slow, the boot sequence may miss reading the DVD.</p>  
+<h4>Old Computers</h4>
+<p>If you have a very old computer and the BIOS does not support booting from the desired media, Plop Boot Manager can be used to boot DVD or USB media. <!--link to Plop Boot Manager--></p>
+
+<h3>bsdinstall</h3>
+<p>GhostBSD will start to boot. If you are booting from the DVD you will see a black screen with text similar to this:</p>
+
+
+<br>CD Loader 1.2
+
+<br>Building the boot loader arguments
+<br>Looking up /BOOT/LOADER... Found
+<br>Relocating the loader and the BTX
+<br>Starting the BTX loader
+
+<br>BTX loader 1.00 BTX version is 1.02
+<br>Consoles: internal video/keyboard
+<br>BIOS CD is cd0
+<br>BIOS drive C: is disk0
+<br>BIOS drive D: is disk1
+<br>BIOS 636kB/261056kB available memory
+
+<br>FreeBSD/i386 bootstrap loader, Revision 1.1
+
+<br>Loading /boot/defaults/loader.conf
+<br>/boot/kernel/kernel text=0x64daa0 data=0xa4e80+0xa9e40 syms=[0x4+0x6cac0+0x4+0x88e9d]
+<br>\
+<br>
+
+<p>The GhostBSD boot loader is displayed:</p>
+
+	<img src="Boot.png" alt="Boot" width="100" height="100">
+
+<p>Wait ten seconds, or press Enter.  Once GhostBSD is booted you should see a screen like this:</p>
+
+	<img src="Screeen.png" alt="Screen" width="100" height="100">
+
+
+<h3>Installing with GBI.</h3>
+
+<p>GBI is a GTK graphical BSD installer program written by Eric Turgeon and introduced in 2011 for GhostBSD 2.5. GBI use the pc-sysinstall back-end developed by Kris More of PC-BSD.</p>
+
+
+<h3>Language Menu</h3>
+
+
+<h4>Selecting language menu</h4>
+
+	<img src="Language.png" alt="Language" width="100" height="100">
+
+
+<p>Select the language you will like to use after the installation. If your language is not show in selection, you can change it at the first boot to the GDM login.  In compliance with Canadian practice, GBI will be multilingual in the future and display the languages the developers speak.</p>
+
+
+<h3>Keyboard Menu</h3>
+
+<p>Selecting keyboard model, layout and variant menu</p>
+
+<img src="Keyboard.png" alt="Keyboard" width="100" height="100">
+
+
+<p>The model option is the model of your keyboard. The list is large. You do not need to specify one model. But using this option it will give you full support of your keyboard.
+
+The layout option is your country specific keyboard layout. The variant option is your type of keyboard. This option give you the opportunity to select Dvorak, Qwerty and more. If you use the default GhostBSD system keyboard setup you can skip by just click on on forward. Also if you don't know your keyboard model and variant, skip forward.</p>
+
+
+<h3>Time Zone menu</h3>
+
+<p>Setting the time zone for your machine allows it to automatically correct for any regional time changes and perform other time zone related functions properly.</p>
+
+
+<h3>Selecting Time Zone:</h3>
+
+	<img src="Timezone.png" alt="Time Zone" width="100" height="100">
+
+
+<p>Select the continent you live in and chose your city or a listed city that is in your time zone.</p>
+
+
+<h3>Disk and Installation Option Menu</h3>
+
+
+<h3>Selecting from Multiple Disks</h3>
+
+<p>If multiple disks are connected, choose the one where GhostBSD is to be installed.</p>
+
+	<img src="Option.png" alt="Option" width="100" height="100">
+
+
+<h3>Selecting Installation option</h3>
+
+<p>A portion of the disk or the entire disk can be allocated to GhostBSD. If "Use Entire Disk" is chosen, a general partition layout filling the whole disk is created. By selecting "Auto label Partition", you can creates a partition slices without labeling and allocating space. By selecting "Customize Disk Partition",the advanced user can create custom partition slices and create multiple labels.</p>
+
+
+<h3>Boot Loader</h3>
+
+<p>GhostBSD gives you the option of using the BSD Boot Loader or not. If you dual boot with GNU/Linux, you should use the Gnu/Linux Grub boot loader. If you dual boot GhostBSD with MS Windows, you should use the BSD boot loader.</p>
+
+
+<h3>Selecting Use Entire Disk</h3>
+
+<p>When using this option it use all the space of the hard drive selected.</p>
+
+
+<h3>Selecting Auto label Partition</h3>
+
+	<img src="Slice.png" alt="Slice" width="100" height="100">
+
+
+<h3>Selecting Customize Disk Partition</h3>
+
+	<img src="Label.png" alt="Label" width="100" height="100">
+
+
+<h3>Adding User</h3>
+
+	<img src="AddUser.png" alt="AddUser" width="100" height="100">
+
+
+<h3>Summary Installation</h3>
+
+	<img src="Summary.png" alt="Summary" width="100" height="100">
+	
+
+<h3>Installation Progress</h3>
+
+	<img src="Progress.png" alt="Progress" width="100" height="100">
+	
+
+<h3>Installation Error</h3>
+
+	<img src="Error.png" alt="Error" width="100" height="100">
+	
+
+<h3>Installation Success</h3>
+
+	<img src="Success.png" alt="Success" width="100" height="100">
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
